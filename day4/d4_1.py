@@ -2,4 +2,16 @@ import sys
 sys.path.append("./helper")
 from readfile import read
 
-print(read("day4/d4_input.txt"))
+f = read(4)
+i = 0
+for x in f:
+  ranges = x.split(",")
+  r1 = ranges[0].split("-")
+  r2 = ranges[1].split("-")
+  a = int(r1[0])
+  b = int(r1[1])
+  c = int(r2[0])
+  d = int(r2[1])
+  if (a >= c and b <= d) or (a <= c and b >= d):
+    i += 1
+print(i)
